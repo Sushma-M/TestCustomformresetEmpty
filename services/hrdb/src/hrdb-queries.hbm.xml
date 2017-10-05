@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="insertDataintoUSer">
+        <![CDATA[
+        insert into User(USERNAME,PASSWORD,ROLE,TENANT_ID) Values(:USERNAME,:PASSWORD,:ROLE,:TENANT_ID)
+        ]]>
+    <query-param name="USERNAME" type="java.lang.String"/>
+    <query-param name="PASSWORD" type="java.lang.String"/>
+    <query-param name="ROLE" type="java.lang.String"/>
+    <query-param name="TENANT_ID" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="insertDataintoUSer__count">
+        <![CDATA[
+        select count(*) from (insert into User(USERNAME,PASSWORD,ROLE,TENANT_ID) Values(:USERNAME,:PASSWORD,:ROLE,:TENANT_ID)) wmTempTable
+        ]]>
+    <query-param name="USERNAME" type="java.lang.String"/>
+    <query-param name="PASSWORD" type="java.lang.String"/>
+    <query-param name="ROLE" type="java.lang.String"/>
+    <query-param name="TENANT_ID" type="java.lang.String"/>
+    </sql-query>
+</hibernate-mapping>

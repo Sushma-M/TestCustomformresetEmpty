@@ -1,0 +1,56 @@
+{
+  "insertDataintoUSer" : {
+    "name" : "insertDataintoUSer",
+    "description" : "insert",
+    "version" : "V2",
+    "queryString" : "insert into User(USERNAME,PASSWORD,ROLE,TENANT_ID) Values(:USERNAME,:PASSWORD,:ROLE,:TENANT_ID)",
+    "countQueryString" : "select count(*) from (insert into User(USERNAME,PASSWORD,ROLE,TENANT_ID) Values(:USERNAME,:PASSWORD,:ROLE,:TENANT_ID)) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "INSERT",
+    "parameters" : [ {
+      "name" : "USERNAME",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "user2",
+      "required" : true
+    }, {
+      "name" : "PASSWORD",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "user2",
+      "required" : true
+    }, {
+      "name" : "ROLE",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "user2",
+      "required" : true
+    }, {
+      "name" : "TENANT_ID",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.hrdb.models.query.InsertDataintoUserRequest",
+      "method" : "POST"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  }
+}
